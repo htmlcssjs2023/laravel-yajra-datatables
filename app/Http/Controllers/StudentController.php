@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
-use DataTables;
 use Yajra\DataTables\Facades\DataTables as FacadesDataTables;
 
 class StudentController extends Controller
@@ -16,7 +15,7 @@ class StudentController extends Controller
     {
         if($request->ajax()){
             $data = Student::latest()->get();
-            return Datatables::of($data)->addIndexColumn()->addColumn('action', function($row){
+            return FacadesDataTables::of($data)->addIndexColumn()->addColumn('action', function($row){
                 $btnAction = "<a href='#' class='btn btn-success mr-2'>Edit</a>" . "<a href='#' class='btn btn-danger'>Delete</a>";
                 return $btnAction;
             })->rawColumns(['action'])->make(true);
