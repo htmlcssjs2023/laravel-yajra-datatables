@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 8|7 Datatables Tutorial</title>
+    <title>Laravel 9</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2 class="mb-4">Laravel 7|8 Yajra Datatables Example</h2>
+    <h2 class="mb-4">Welcome to Yajra Basic Datatables</h2>
     <table class="table table-bordered yajra-datatable">
         <thead>
             <tr>
@@ -34,6 +35,7 @@
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
 <script type="text/javascript">
   $(function () {
 
@@ -42,21 +44,42 @@
         serverSide: true,
         ajax: "{{ route('students.list') }}",
         columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {data: 'username', name: 'username'},
-            {data: 'phone', name: 'phone'},
-            {data: 'dob', name: 'dob'},
-            {
-                data: 'action',
-                name: 'action',
-                orderable: true,
-                searchable: true
-            },
+                {
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                {
+                    data: 'name',
+                    name: 'name'
+                },
+                {
+                    data: 'email',
+                    name: 'email'
+                },
+                {
+                    data:'username',
+                    name:'username'
+                },
+                {
+                    data:'phone',
+                    name:'phone'
+                },
+                {
+                    data:'dob',
+                    name:'dob'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable:true,
+                    searchable:true,
+                },
+
         ]
     });
 
   });
+
+
 </script>
 </html>
